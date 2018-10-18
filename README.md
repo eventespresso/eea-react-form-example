@@ -1,11 +1,12 @@
-Event Espresso Recurring Events Manager
+Event Espresso React Form Example
 =========
 
-[![Latest Release](https://img.shields.io/github/tag/eventespresso/eea-recurring-events-manager.svg?style=flat&label=Latest%20Release)](https://github.com/eventespresso/eea-recurring-events-manager/releases)
-[![Travis](https://travis-ci.org/eventespresso/eea-recurring-events-manager.svg?branch=master)](https://travis-ci.org/eventespresso/eea-recurring-events-manager)
+[![Latest Release](https://img.shields.io/github/tag/eventespresso/eea-react-form-example.svg?style=flat&label=Latest%20Release)](https://github.com/eventespresso/eea-react-form-example/releases)
+[![Travis](https://travis-ci.org/eventespresso/eea-react-form-example.svg?branch=master)](https://travis-ci.org/eventespresso/eea-react-form-example)
 [![License](https://img.shields.io/badge/License-GPLv2-blue.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html)
 [![Event Espresso Addon](https://img.shields.io/badge/Addon%20For-Event%20Espresso-blue.svg)](https://github.com/eventespresso/event-espresso-core)
-[![Minimum EE Core Version:](https://img.shields.io/badge/Minimum%20EE%20core%20ver-4.9.37.p-red.svg)](https://github.com/eventespresso/event-espresso-core/releases/tag/4.9.37.p)
+[![Minimum EE Core Version:](https://img.shields.io/badge/Minimum%20EE%20core%20ver-4.9.70.p-red.svg)](https://github
+.com/eventespresso/event-espresso-core/releases/tag/4.9.70.p)
 
 This add-on adds some extra groovy features to [Event Espresso](https://eventespresso.com).
 
@@ -15,14 +16,14 @@ This add-on adds some extra groovy features to [Event Espresso](https://eventesp
 
 | **Some Links**|     |
 |---- | --- |
-**Support License** | Support for this add-on is not provided through this repository.  For support you can purchase a [Premium Support License](https://eventespresso.com/product/eea-recurring-events-manager?ee_ver=ee4&utm_source=github&utm_medium=link&utm_campaign=ee_addon_description_readme&utm_content=premium+support+license). 
-**Documentation** | [View Documentation →](https://eventespresso.com/wiki/eea-recurring-events-manager?utm_source=github&utm_medium=link&utm_campaign=ee_addon_description_readme&utm_content=view+addon+documentation)
+**Support License** | Support for this add-on is not provided through this repository.  For support you can purchase a [Premium Support License](https://eventespresso.com/product/eea-react-form-example?ee_ver=ee4&utm_source=github&utm_medium=link&utm_campaign=ee_addon_description_readme&utm_content=premium+support+license). 
+**Documentation** | [View Documentation →](https://eventespresso.com/wiki/eea-react-form-example?utm_source=github&utm_medium=link&utm_campaign=ee_addon_description_readme&utm_content=view+addon+documentation)
 **Newsletter** | Be the first to know when we ship new features ... [signup here](https://eventespresso.com/newsletter/).
 **Community Chat** | Join a real-time community chat group for professionals that are leading the way in events from event management, event technology and event marketing to work-life balance. [Join the Discussion →](https://eventsmart.com/contact/community-chat/?utm_source=github&utm_medium=link&utm_campaign=ee_addon_description_read_me&utm_content=community+chat)
 
 ## Developers
 **This is the full version of the add-on** and provides its full feature set. The repository is provided to assist you with evaluating whether it will solve your use-case.  
-> We ask if you are using this to provide a solution for clients that you (or your client) [purchase a support license](https://eventespresso.com/product/eea-recurring-events-manager?ee_ver=ee4&utm_source=github&utm_medium=link&utm_campaign=ee_addon_description_readme&utm_content=premium+support+license) for this add-on.
+> We ask if you are using this to provide a solution for clients that you (or your client) [purchase a support license](https://eventespresso.com/product/eea-react-form-example?ee_ver=ee4&utm_source=github&utm_medium=link&utm_campaign=ee_addon_description_readme&utm_content=premium+support+license) for this add-on.
 
 **No Usage Support** is provided in this repository.
 

@@ -1,0 +1,27 @@
+{
+	"versionFile" : "eea-react-form-example.php",
+	"slug" : "eea-react-form-example",
+	"name" : "Event Espresso React Form Example",
+	"archiveBaseUrl" : "http://build.eventespresso.com/",
+	"archiveBasePath" : "~/www/build/",
+    "demoee" : false,
+    "srcBuildFolderName" : "eea-react-form-example",
+    "textDomain" : "event_espresso",
+	"jsBuildDirectory": ".\/",
+	"wpi18nJsPotFilePath": ".\/languages\/ee-js.pot",
+	"releaseFilesRemove" : [
+		"src\/info.json",
+		"src\/.github\/**",
+		"src\/assets\/src\/**",
+		"src\/eslint\/**",
+		"src\/.babelrc",
+		"src\/.editorconfig",
+		"src\/.eslintignore",
+		"src\/.eslintrc.js",
+		"src\/.nvmrc",
+		"src\/.postcss.config.js"
+	],
+	"github" : true,
+	"awsbucket" : "",
+	"awsregion" : ""
+}
