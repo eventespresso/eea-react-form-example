@@ -9,4 +9,3 @@ ReactDOM.render(
 	document.getElementById( 'espresso-react-form-example-div' )
 );
 
-alert('YOLO');
