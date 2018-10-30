@@ -36,66 +36,54 @@
  *
  * ------------------------------------------------------------------------
  */
+if (defined('PHP_VERSION_ID') && PHP_VERSION_ID >= 50600) {
+    add_action(
+        'AHEE__EE_System__load_espresso_addons',
+        function() {
+            EE_Psr4AutoloaderInit::psr4_loader()->addNamespace('EventEspresso\ReactFormExample', __DIR__);
+            EventEspresso\core\domain\DomainFactory::getShared(
+                new EventEspresso\core\domain\values\FullyQualifiedName(
+                    'EventEspresso\ReactFormExample\src\domain\Domain'
+                ),
+                array(
+                    new EventEspresso\core\domain\values\FilePath(__FILE__),
+                    EventEspresso\core\domain\values\Version::fromString('1.0.0.rc.000'),
+                )
+            );
+            EE_Dependency_Map::instance()->add_alias(
+                'EventEspresso\ReactFormExample\src\domain\Domain',
+                'EventEspresso\core\domain\DomainInterface',
+                'EventEspresso\ReactFormExample\src\domain\services\assets\ReactFormExampleAssetManager'
+            );
+            EE_Dependency_Map::instance()->registerDependencies(
+                'EventEspresso\ReactFormExample\src\domain\services\assets\ReactFormExampleAssetManager',
+                [
+                    'EventEspresso\core\services\assets\AssetCollection' => EE_Dependency_Map::load_from_cache,
+                    'EventEspresso\ReactFormExample\src\domain\Domain'   => EE_Dependency_Map::load_from_cache,
+                    'EventEspresso\core\services\assets\Registry'        => EE_Dependency_Map::load_from_cache
+                ]
+            );
+            EE_Dependency_Map::instance()->registerDependencies(
+                'EventEspresso\ReactFormExample\src\ui\admin\ReactFormExampleAdmin',
+                array(
+                    'EventEspresso\ReactFormExample\src\domain\services\assets\ReactFormExampleAssetManager' => EE_Dependency_Map::load_from_cache
+                )
+            );
+        }
+    );
+    add_action(
+        'current_screen',
+        function() {
+            $screen = get_current_screen();
+            if($screen instanceof WP_Screen && $screen->id === 'toplevel_page_espresso_events') {
+                /** @var EventEspresso\ReactFormExample\src\ui\admin\ReactFormExampleAdmin $admin */
+                $admin = EventEspresso\core\services\loaders\LoaderFactory::getLoader()->getShared(
+                    'EventEspresso\ReactFormExample\src\ui\admin\ReactFormExampleAdmin'
+                );
+                $admin->setHooks();
+            }
+        }
+    );
+}
 
-
-use EventEspresso\core\services\loaders\LoaderFactory;
-
-add_action(
-    'AHEE__espresso_events_Pricing_Hooks___pricing_metabox__start',
-    function() {
-        echo '<div id="espresso-react-form-example-div"><h1>React Form System Example</h1></div>';
-        /** @var EventEspresso\core\domain\services\assets\EspressoEditorAssetManager $editor */
-        $editor = LoaderFactory::getLoader()->getShared(
-            'EventEspresso\core\domain\services\assets\EspressoEditorAssetManager'
-        );
-        $editor->addJavascript(
-            'espresso_react_form_example',
-            plugin_dir_url(__FILE__) . 'index.js',
-            ['eventespresso-editor']
-        )
-               ->setRequiresTranslation();
-    }
-);
-
-
-// add_action(wp-content/plugins/eea-react-form-example/eea-react-form-example.php:61
-//     'admin_print_footer_scripts',
-//     function () {
-//         $screen = get_current_screen();
-//         if ( $screen->id !== 'espresso_events') {
-//             return;
-//         }
-//         $script = '<script src="https://unpkg.com/react@15/dist/react.js"></script>';
-//         $script .= '<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>';
-//         $script .= '<script type="module" src="' . plugin_dir_url(__FILE__) . 'index.js" </script>';
-//         echo $script;
-//         // add_filter(
-//         //     'clean_url',
-//         //     'espresso_allow_react_form_example',
-//         //     10, 3
-//         // );
-//         // add_filter(
-//         //     'script_loader_src',
-//         //     function ($src, $handle) {
-//         //         if ($handle !== 'espresso_react_form_example') {
-//         //             return $src;
-//         //         }
-//         //         echo '<h1>script_loader_src</h1>';
-//         //         return $src . '" type="module';
-//         //     },
-//         //     10,
-//         //     2
-//         // );
-//         // wp_register_script(
-//         //     'espresso_react_form_example',
-//         //     plugin_dir_url(__FILE__) . 'index.js',
-//         //     array('eventespresso-editor'),
-//         //     '0.0.1',
-//         //     true
-//         // );
-//         // wp_enqueue_script('espresso_react_form_example');
-//     },
-//     999
-// );
-
-
+// location: wp-content/plugins/eea-react-form-example/eea-react-form-example.php
