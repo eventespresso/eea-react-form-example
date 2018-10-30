@@ -2,20 +2,13 @@
  * Internal imports
  */
 import { loadHandler, submitHandler } from './example-form-handler';
-import { withFormHandler } from '../event-espresso-core/assets/src/components/form/base/with-form-handler';
-import { FormInput } from '../event-espresso-core/assets/src/components/form/inputs/form-input';
-import { InputLabel } from '../event-espresso-core/assets/src/components/form/inputs/base/input-label';
 import {
-	FormColumn,
-	FormRow,
-	FormSection,
-	FormWrapper,
-} from '../event-espresso-core/assets/src/components/form/layouts/two-column-admin/index';
-// to switch the form layout and styling,
-// you simply have to swap out the above path
-// for one of the other layout strategies, like:
-// '../components/form/layouts/wp-admin-two-column';
-import * as validations from '../event-espresso-core/assets/src/components/form/validations/index';
+	withFormHandler,
+	FormInput,
+	InputLabel,
+	twoColumnAdminFormLayout,
+	validations,
+} from '@eventespresso/components';
 
 /**
  * @function
@@ -31,6 +24,12 @@ const ExampleForm = ( {
 	initialValues = {},
 	currentValues = {},
 } ) => {
+	const {
+		FormColumn,
+		FormRow,
+		FormSection,
+		FormWrapper,
+	} = twoColumnAdminFormLayout;
 	// console.log( '*** ExampleForm ***' );
 	// console.log( ' > email', currentValues.email );
 	// console.log( ' > confirm', currentValues.confirm );
