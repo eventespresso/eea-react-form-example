@@ -181,7 +181,7 @@ const ExampleForm = ( {
 							initialValue={ initialValues.confirm }
 							validations={
 								validations.matches(
-									currentValues.email,
+									initialValues.email || currentValues.email,
 									'email address'
 								)
 							}
